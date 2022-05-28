@@ -6,6 +6,7 @@ import datetime as dt
 
 def main(request):
     date = dt.date.today()
-    return render(request, 'main.html',{"date": date})
+    post = Galleria.days_post
+    return render(request, 'main.html',{"date": date,"post":post})
 
 

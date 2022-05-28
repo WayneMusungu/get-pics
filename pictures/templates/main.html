@@ -4,6 +4,15 @@
 
 <h1>WELCOME TO PATA PICHA</h1>
 {{block.super}}
+{% for post_item in post %}
+<div class="row">
+    <!-- displaying post pictures -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="text-center"> {{ post_item.title }} </h2>
+        <h2 class="text-center"> {{ post_item.description }} </h2>
+        <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
+    </div>
+    {%endfor%}
 
 {%endblock%}
 
