@@ -2,6 +2,16 @@ from django.db import models
 import datetime as dt
 
 # Create your models here.
+class Category(models.Model):
+    category = models.CharField(max_length =30)
+    def __str__(self):
+        return self.category
+    def save_category(self):
+        self.save()
+    def delete_category(self):
+        self.delete()
+
+
 class Location(models.Model):
     location = models.CharField(max_length =30)
     def __str__(self):
@@ -17,6 +27,7 @@ class Galleria(models.Model):
     image_pic = models.ImageField(upload_to = 'pics/', null=True)
     description = models.TextField()
     location = models.ManyToManyField('location')
+    category = models.ManyToManyField('category')
     pub_date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
