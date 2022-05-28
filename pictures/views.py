@@ -6,7 +6,7 @@ import datetime as dt
 
 def main(request):
     date = dt.date.today()
-    post = Galleria.days_post
+    post = Galleria.objects.all()
     return render(request, 'main.html',{"date": date,"post":post})
 
 def search_results(request):
@@ -20,5 +20,17 @@ def search_results(request):
     else:
        message = "You haven't searched for any term"
        return render(request, 'search.html',{"message":message})
+   
+# def photo_location(request):
+#     if 'galleria' in request.GET and request.GET["galleria"]:
+#         location = request.GET.get('galleria')
+#         filtername= Galleria.search_by_location(location)
+#         message = f"{location}"
+
+#         return render(request, 'location.html',{"message":message, "galleria":filtername})
+
+#     else:
+#        message = "You haven't searched for any term"
+#        return render(request, 'search.html',{"message":message})
 
 

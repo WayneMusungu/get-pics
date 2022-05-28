@@ -1,21 +1,20 @@
-{%extends 'base.html'%} {% block content %}
+{%extends 'base.html'%}
+{% block content %}
 <div class="container">
 
     <div class="row">
         {% if galleria%}
-        <h2>Found {{ galleria|length }} of searched term {{message}}</h2>
-        {% else %}
-        <h2> Found 0 Category for the search term {{message}}</h2>
+
+        <h2>Found {{ galleria|length }} of searched term {{message}}</h2><br> {% else %}
+        <h2> Found 0 Location for the search term {{message}}</h2>
         {% endif %}
 
     </div>
 
-    
-
-
     <div class="row">
 
-        {% if galleria %} {% for posts in galleria %}
+        {% if galleria %}
+        {% for posts in galleria %}
         <div class="card mb-3" style="max-width: 1000px;">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -33,5 +32,7 @@
 
         {% endfor %} {% endif %}
     </div>
+
+</div>
 </div>
 {% endblock %}

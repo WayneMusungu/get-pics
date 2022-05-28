@@ -1,3 +1,4 @@
+from unittest import result
 from django.db import models
 import datetime as dt
 
@@ -10,6 +11,7 @@ class Category(models.Model):
         self.save()
     def delete_category(self):
         self.delete()
+        
 
 
 class Location(models.Model):
@@ -44,7 +46,19 @@ class Galleria(models.Model):
         post = cls.objects.filter(pub_date__date = today)
         return post
     
+    
     @classmethod
-    def search_by_category(cls, category_term):
-        photo= cls.objects.filter(category__category__icontains=category_term)
-        return photo
+    def search_by_category(cls, category_term=None):
+        result = None
+        if category_term is not None:
+            result= cls.objects.filter(category__category__icontains=category_term)
+            if result.exists():
+                return result
+        if category_term is not None:
+            result = cls.objects.filter(location__location__icontains= category_term)
+            if result.exists():
+                return result  
+        return result
+    
+   
+   
