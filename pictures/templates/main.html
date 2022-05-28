@@ -12,6 +12,14 @@
         <h2 class="text-center"> {{ post_item.description }} </h2>
         <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
     </div>
+    <!--Display news Galleria images  -->
+
+    <div class=" pic" style="margin-top: 10px; ">
+        <a href="">
+            <img src="{{post_item.image_pic.url}}" class="img-responsive" alt="Image" style="height: 300px; width: 300px; ">
+        </a>
+    </div>
+
     {%endfor%}
 
 {%endblock%}
