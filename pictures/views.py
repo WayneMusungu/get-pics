@@ -13,6 +13,7 @@ def main(request):
 def search_results(request):
     if 'galleria' in request.GET and request.GET["galleria"]:
         category_term = request.GET.get('galleria')
+        
         searchname= Galleria.search_by_category(category_term)
         message = f"{category_term}"
 

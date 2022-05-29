@@ -13,13 +13,13 @@
 </head>
 {% block styles %}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/amito.css' %}">
+    <link rel="stylesheet" href="{% static 'css/amit.css' %}">
 {% endblock %}
 
 <body>
     {% include "navbar.html" %}
     {% block content %}
-    <p style>{{date|date:"l d-F Y"}}</p>
+    <p style="text-align: center;">{{date|date:"l d-F Y"}}</p>
     {%endblock%}
 
     {% block scripts %}

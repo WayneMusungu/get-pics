@@ -3,25 +3,33 @@
 {% block content %}
 
 <h1>WELCOME TO PATA PICHA</h1>
-{{block.super}}
-{% for post_item in post %}
+
+
 <div class="container">
+    <p>{{block.super}}</p>
+
+    <p><small class="text-muted">Search for locations: China, England, Japan, Kenya, USA</small></p>
+
+    
+
     <div class="row">
-        <div class="col-md-4">
-            <div class=" post_item" style="margin-top: 10px; ">
+        {% for post_item in post %}
+        <div class="col-md-4 card" style="margin-top: 10px; margin-bottom: 10px; border-radius: 20px;">
+            <div class=" post_item" style="margin-top: 10px; margin-bottom: 10px; ">
                 <a href="{% url 'imagedetails' post_item.id %}">
-                    <img src="{{post_item.image.url}}" data-target="#imageModal{{post_item.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage" style="height: 480px; width: 350px">
+                    <img src="{{post_item.image.url}}" data-target="#imageModal{{post_item.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage" style="border-radius: 10px; height: 50vh; width: 100%; margin-top: 10px; margin-bottom: 10px;">
                 </a>
             </div>
     
     
         </div>
+        {%endfor%}
     
     </div>
 
 </div>
 
-    {%endfor%}
+   
 
 {%endblock%}
 
