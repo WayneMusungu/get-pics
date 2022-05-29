@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http  import HttpResponse
+from django.http  import Http404, HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Galleria
 import datetime as dt
 # Create your views here.
@@ -20,17 +21,12 @@ def search_results(request):
     else:
        message = "You haven't searched for any term"
        return render(request, 'search.html',{"message":message})
-   
-# def photo_location(request):
-#     if 'galleria' in request.GET and request.GET["galleria"]:
-#         location = request.GET.get('galleria')
-#         filtername= Galleria.search_by_location(location)
-#         message = f"{location}"
 
-#         return render(request, 'location.html',{"message":message, "galleria":filtername})
+def one_image(request, galleria_id):
+    try:
+        image = Galleria.objects.get(id = galleria_id)
+    except ObjectDoesNotExist:
+        raise Http404()
 
-#     else:
-#        message = "You haven't searched for any term"
-#        return render(request, 'search.html',{"message":message})
-
+    return render(request, 'display_image.html', {'image': image})
 
