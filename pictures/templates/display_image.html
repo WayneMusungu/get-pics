@@ -1,13 +1,17 @@
 {%extends 'base.html'%} {% block content %}
+ <div class="container">
+    <div class="card one" style="border-radius: 20px; margin-top: 15px;">
 
-<div class="card one" style="width: 60rem;">
-
-    <img src="{{image.image.url}}" style="height: 600px; width: 700px" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{image.title}}</h5>
-        <p class="card-text">{{image.description}}</p><br>
-        <p>Posted:{{ image.pub_date|timesince }} </p>
+        <img src="{{image.image.url}}" style="height: 600px; width: 700px; border-radius: 20px; margin-left: 250px; margin-top: 50px;" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{image.title}}</h5>
+            <p class="card-text">{{image.description}}</p><br>
+            <p>Posted:{{ image.pub_date|timesince }} </p>
+        </div>
     </div>
-</div>
-</div>
+    </div>
+
+
+ </div>
+
 {% endblock %}

@@ -5,22 +5,19 @@
 <h1>WELCOME TO PATA PICHA</h1>
 {{block.super}}
 {% for post_item in post %}
-<div class="row">
-    <!-- displaying post pictures -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <h2 class="text-center"> {{ post_item.title }} </h2>
-        <h2 class="text-center"> {{ post_item.description }} </h2>
-        <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class=" post_item" style="margin-top: 10px; ">
+                <a href="{% url 'imagedetails' post_item.id %}">
+                    <img src="{{post_item.image.url}}" data-target="#imageModal{{post_item.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage" style="height: 480px; width: 350px">
+                </a>
+            </div>
+    
+    
+        </div>
+    
     </div>
-    <!--Display news Galleria images  -->
-
-    <div class=" pic" style="margin-top: 10px; ">
-        <a href="">
-            <img src="{{post_item.image.url}}" class="img-responsive" alt="Image" style="height: 300px; width: 300px; ">
-        </a>
-    </div>
-
-
 
 </div>
 

@@ -13,13 +13,13 @@
 </head>
 {% block styles %}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/otima.css' %}">
+    <link rel="stylesheet" href="{% static 'css/amito.css' %}">
 {% endblock %}
 
 <body>
     {% include "navbar.html" %}
     {% block content %}
-    <p>{{date|date:"l d-F Y"}}</p>
+    <p style>{{date|date:"l d-F Y"}}</p>
     {%endblock%}
 
     {% block scripts %}
