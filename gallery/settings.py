@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-dad!2)pk*+*f!xhmuyc43yo_*0u#oz^=!(w_p_6nt%&rv-w$s8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['quiet-atoll-31258.herokuapp.com']
+ALLOWED_HOSTS = ['quiet-atoll-31258.herokuapp.com','127.0.0.1']
 
 
 # Application definition
