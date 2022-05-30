@@ -4,53 +4,50 @@
 #### Author: [Wayne Musungu](https://github.com/WayneMusungu)
 
 #### **Description**
-This is a personal gallery application built using  Python that allows one to view photos and search for photos based on the category and the locations.
+This is a personal gallery application built using Python that allows one to view photos and search for photos based on the category and the locations.
 ![LANDING PAGE](home.png)
 
 
-#### Home Page
-Upon successful login a user can be able to access the home page where they can create new post and update their account profile.
+#### Livelink
+https://aqueous-taiga-19712.herokuapp.com/
 
 
 
-#### Register Page
-The register page enables new users to create an account by providing the credetials required to be able to access the application.
-![LANDING PAGE](register.png)
+#### Setup Installation
+* Copy the github repository url
+* Clone to your computer
+* Open terminal and navigate to the directory of the project you just cloned to your computer
+* Run the following command to start the server using virtual environment
+python3.8 -m venv --without-pip virtual
+* To activate the virtual environment
+source virtual/bin/activate
+curl https://bootstrap.pypa.io/get-pip.py | python
+* To run the server
+
+``` python manage.py runserver```
+
+### Technologies Used
+
+* HTML
+* CSS
+* Bootstrap
+* Python
+* Django
+
+#### Dependencies
+
+1. One will be directed to the homepage where they will view the images displayed on the page.
+2. One can  click on the image and they will be redirected to a page which will display the image, the image title, the image description and the day posted.
+3. One can search on a photo category that are shown in the search placeholder and will display all images related to searched category.
+4. One can also search on photos based on locations like China, England, Japan, Kenya and USA
+
+#### Contact Information
+
+You can reach me on my email [waynemuyera17@gmail.com.com]
 
 
 
-#### Getting Started
-- Clone this repo and ```cd``` into the folder
-```sh 
-$ git clone https://github.com/WayneMusungu/blog-post.git
-$ source virtual/bin/activate
-(virtual)$ pip install -r requirements.txt
-(virtual)$ python3 run.py
-```
-
-
-#### **User Story BDD**
-- As a user, I would like to see the pitches other people have posted.
-- As a user, I would like to be signed in and be able to log out.
-- As a user, I would like to submit a pitch.
-- As a user, I would like to view the pitches I have created.
-- As a user, I would like to update an already existing post.
-- As a user, I would like to delete an already existing post.
-- As a user, I would like to make comments an already existing post.
-- As a user, I would like to upvote and downvote an already existing post.
-
-
-
-
-
-#### **Technologies used**
-1. Flask
-2. HTML5
-3. Bootstrap5
-
-
-
-## License
+### License
 
 License
 MIT Copyright (c) 2022 Wayne Musungu
