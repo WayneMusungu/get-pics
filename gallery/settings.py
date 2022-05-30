@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+
 # import cloudinary
 # import cloudinary.uploader
 # import cloudinary.api
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-dad!2)pk*+*f!xhmuyc43yo_*0u#oz^=!(w_p_6nt%&rv-w$s8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'fierce-mesa-98818.herokuapp.com']
 
 
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pictures.apps.PicturesConfig',
     "django_bootstrap5",
+    "whitenoise.runserver_nostatic",
     # "cloudinary",
 ]
 
@@ -91,6 +93,8 @@ DATABASES = {
         'PASSWORD':'1234567890',
     }
 }
+
+
 
 
 # Password validation
