@@ -1,6 +1,7 @@
 from unittest import result
 from django.db import models
 import datetime as dt
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Category(models.Model):
@@ -26,7 +27,8 @@ class Location(models.Model):
 
 class Galleria(models.Model):
     title = models.CharField(max_length=60)
-    image = models.ImageField(upload_to = 'image/', null=True)
+    image = CloudinaryField('image', null = True)
+    # image = models.ImageField(upload_to = 'image/', null=True)
     description = models.TextField()
     location = models.ManyToManyField('location')
     category = models.ManyToManyField('category')

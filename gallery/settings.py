@@ -13,9 +13,10 @@ import os
 from pathlib import Path
 import django_heroku
 
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 # from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'pictures.apps.PicturesConfig',
     "django_bootstrap5",
     "whitenoise.runserver_nostatic",
-    # "cloudinary",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -86,24 +87,24 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#          'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'tribune',
-#         'USER': 'wayne',
-#         'PASSWORD':'1234567890',
-#     }
-# }
-DATABASES={
-   'default':{
-      'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'db50eocacki4qb',
-      'USER':'lpppamnpqjyynf',
-      'PASSWORD':'749ca89c758f1cb416f4a6d839ba9d36f431f9a074578aa71e3bcb8c7a617d19',
-      'HOST':'ec2-34-231-221-151.compute-1.amazonaws.com',
-      'PORT':'5432',
-   }
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tribune',
+        'USER': 'wayne',
+        'PASSWORD':'1234567890',
+    }
 }
+# DATABASES={
+#    'default':{
+#       'ENGINE':'django.db.backends.postgresql_psycopg2',
+#       'NAME':'db50eocacki4qb',
+#       'USER':'lpppamnpqjyynf',
+#       'PASSWORD':'749ca89c758f1cb416f4a6d839ba9d36f431f9a074578aa71e3bcb8c7a617d19',
+#       'HOST':'ec2-34-231-221-151.compute-1.amazonaws.com',
+#       'PORT':'5432',
+#    }
+# }
 
 
 
@@ -159,9 +160,9 @@ django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# cloudinary.config(
-#     cloud_name = "dsdzrt2xr",
-#     api_key = "148214646959657",
-#     api_secret = "Eb_BdyQjlcQTHU4DgEITbGki1WI",
-#     secure = True
-# )
+cloudinary.config(
+    cloud_name = "dsdzrt2xr",
+    api_key = "148214646959657",
+    api_secret = "Eb_BdyQjlcQTHU4DgEITbGki1WI",
+    secure = True
+)
