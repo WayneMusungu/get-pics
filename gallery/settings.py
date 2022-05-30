@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-from decouple import config
+# import cloudinary
+# import cloudinary.uploader
+# import cloudinary.api
+# from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +29,7 @@ SECRET_KEY = 'django-insecure-dad!2)pk*+*f!xhmuyc43yo_*0u#oz^=!(w_p_6nt%&rv-w$s8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['quiet-atoll-31258.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pictures.apps.PicturesConfig',
     "django_bootstrap5",
+    # "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -124,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+STATIC_ROOT = os.path.join(BASE_DIR/'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -136,3 +141,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# cloudinary.config(
+#     cloud_name = "dsdzrt2xr",
+#     api_key = "148214646959657",
+#     api_secret = "Eb_BdyQjlcQTHU4DgEITbGki1WI",
+#     secure = True
+# )
