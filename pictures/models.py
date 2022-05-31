@@ -33,7 +33,7 @@ class Galleria(models.Model):
     location = models.ManyToManyField('location')
     category = models.ManyToManyField('category')
     pub_date = models.DateTimeField(auto_now_add=True)
-    
+     
     def __str__(self):
         return self.title
 

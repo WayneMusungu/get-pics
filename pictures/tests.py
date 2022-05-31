@@ -34,4 +34,4 @@ class LocationTestClass(TestCase):
         locations = Location.objects.all()
         self.assertTrue(len(locations) > 0)
     
-        
+

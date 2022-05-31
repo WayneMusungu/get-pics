@@ -95,6 +95,7 @@ DATABASES = {
         'PASSWORD':'1234567890',
     }
 }
+
 # DATABASES={
 #    'default':{
 #       'ENGINE':'django.db.backends.postgresql_psycopg2',
