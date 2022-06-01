@@ -37,7 +37,7 @@ curl https://bootstrap.pypa.io/get-pip.py | python
 #### Dependencies
 
 1. One will be directed to the homepage where they will view the images displayed on the page.
-2. One can  click on the image and they will be redirected to a page which will display the image, the image title, the image description and the day posted. One can click on the button ````copy image link```` and share the image link to their friends and family.
+2. One can  click on the image and they will be redirected to a page which will display the image, the image title, the image description and the day posted. One can click on the button ```Copy Image Link``` and share the image link to their friends and family.
 3. One can search on a photo category that are shown in the search placeholder and will display all images related to searched category.
 4. One can also search on photos based on locations like China, England, Japan, Kenya and USA
 
